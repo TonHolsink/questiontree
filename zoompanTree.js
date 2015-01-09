@@ -211,7 +211,7 @@ treeJSON = d3.json("zoompanTree.json", function(error, treeData) {
 			})
 			.on('click', click)
 			.on('mouseover', function(d) {
-				d3.selectAll(this.childNodes).classed('hover', true);
+				d3.select(this).classed('hover', true);
 				// Walk parent chain
 				var ancestors = [];
 				var parent = d;
@@ -229,7 +229,7 @@ treeJSON = d3.json("zoompanTree.json", function(error, treeData) {
 						{
 							return p === d.target;
 						});
-					}).attr("class", "link hover");
+					}).classed("hover", true);
 			})
 			.on('mouseout', function(d) {
 				svgGroup.selectAll('.hover').classed('hover', false);
