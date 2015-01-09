@@ -109,9 +109,11 @@ treeJSON = d3.json("zoompanTree.json", function(error, treeData) {
 
 	function centerNode(source) {
 		scale = zoomListener.scale();
+		// x = -source.y0;
 		x = -source.y0;
 		y = -source.x0;
-		x = x * scale + viewerWidth / 2;
+		// x = x * scale + viewerWidth / 2;
+		x = x * scale + lineLength;
 		y = y * scale + viewerHeight / 2;
 		d3.select('g').transition()
 			.duration(duration)
@@ -154,13 +156,11 @@ treeJSON = d3.json("zoompanTree.json", function(error, treeData) {
 	// 	return d;
 	// }
 
+
 	// Toggle children on click.
 
 	function click(d) {
 		if (d3.event.defaultPrevented) return; // click suppressed
-		// d = toggleChildren(d);
-		// update(d);
-		// centerNode(d);
 		showDetails(d);
 	}
 
@@ -209,8 +209,31 @@ treeJSON = d3.json("zoompanTree.json", function(error, treeData) {
 			.attr("transform", function(d) {
 				return "translate(" + source.y0 + "," + source.x0 + ")";
 			})
-			.on('click', click);
+			.on('click', click)
+			.on('mouseover', function(d) {
+				d3.selectAll(this.childNodes).classed('hover', true);
+				// Walk parent chain
+				var ancestors = [];
+				var parent = d;
+				while (!_.isUndefined(parent)) {
+					ancestors.push(parent);
+					parent = parent.parent;
+				}
 
+				// Get the matched links
+				var matchedLinks = [];
+				svgGroup.selectAll('path.link')
+					.filter(function(d)
+					{
+						return _.any(ancestors, function(p)
+						{
+							return p === d.target;
+						});
+					}).attr("class", "link hover");
+			})
+			.on('mouseout', function(d) {
+				svgGroup.selectAll('.hover').classed('hover', false);
+			});
 		nodeEnter.append("circle")
 			.attr('class', function(d) {return d.type == "Q" ? "nodeCircle" : d.type == "S" ? "nodeCircle set" : "nodeCircle answer"; })
 			.attr("r", 0);

@@ -7,28 +7,37 @@
 	}
 
 	.overlay{
-			background-color:#EEE;
+		background-color:#EEE;
 	}
 
-	.node circle {
+	.nodeCircle {
 		fill: #fff;
 		stroke: steelblue;
 		stroke-width: 1.5px;
 	}
 
-	.node circle.set {
+	.set {
 		fill: steelblue;
 	}
 
-	.node circle.answer  {
+	.answer {
 		fill: lightgreen;
 		stroke: lightgreen;
 		stroke-width: 1.5px;
 	}
 
-	.node text {
+	.nodeCircle.hover {
+		stroke-width: 4px;
+	}
+
+	.nodeText {
 		font-size:10px;
 		font-family:sans-serif;
+		stroke-width: .5px;
+	}
+
+	.nodeText.hover {
+		stroke: red;
 	}
 
 	.link {
@@ -37,9 +46,15 @@
 		stroke-width: 1.5px;
 	}
 
+	.link.hover {
+		stroke: steelblue;
+		stroke-width: 2px;
+	}
+
 </style>
-<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="jquery.min.js"></script>
+<script src="underscore-min.js"></script>
+<script src="d3.min.js"></script>
 <script src="zoompanTree.js"></script>
 <body>
 	<div id="tree-container"></div>
