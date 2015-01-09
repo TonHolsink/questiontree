@@ -1,0 +1,176 @@
+{
+	"id":"0",
+	"name":"NAW",
+	"type":"S",
+	"text":"Naw gegevens",
+	"children":[
+		{
+			"id":"1",
+			"name":"Vraag_1",
+			"type":"Q",
+			"text":"Wat is de klacht?",
+			"children":[
+				{
+					"id":"2",
+					"name":"Antwoord_1.1",
+					"type":"A",
+					"text":"Kraan lekt",
+					"children":[
+						{
+							"id":"",
+							"name":"Vraag_2",
+							"type":"Q",
+							"text":"De text van vraag/antwoord"
+						}
+					]
+				},
+				{
+					"id":"3",
+					"name":"Antwoord_1.2",
+					"type":"A",
+					"text":"Verwarming stuk",
+					"children":[
+						{
+							"id":"",
+							"name":"Vraag_3",
+							"type":"Q",
+							"text":"Dit is een hele lange text. Waar schijnlijk veel te lang. De text van vraag/antwoord",
+							"children":[
+								{
+									"id":"",
+									"name":"Antwoord_3.1",
+									"type":"A",
+									"text":"De text van vraag/antwoord",
+									"children":[
+										{
+											"id":"",
+											"name":"Vraag_5",
+											"type":"Q",
+											"text":"De text van vraag/antwoord"
+										}
+									]
+								},
+								{
+									"id":"",
+									"name":"Antwoord_3.2",
+									"type":"A",
+									"text":"De text van vraag/antwoord",
+									"children":[
+										{
+											"id":"",
+											"name":"Set_6",
+											"type":"S",
+											"text":"De text van vraag/antwoord"
+										}
+									]
+								},
+								{
+									"id":"",
+									"name":"Antwoord_3.3",
+									"type":"A",
+									"text":"De text van vraag/antwoord",
+									"children":[
+										{
+											"id":"",
+											"name":"Vraag_7",
+											"type":"Q",
+											"text":"De text van vraag/antwoord"
+										}
+									]
+								},
+								{
+									"id":"",
+									"name":"Antwoord_3.4",
+									"type":"A",
+									"text":"De text van vraag/antwoord",
+									"children":[
+										{
+											"id":"",
+											"name":"Vraag_8",
+											"type":"Q",
+											"text":"De text van vraag/antwoord"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"id":"4",
+					"name":"Antwoord_1.3",
+					"type":"A",
+					"text":"Lamp kapot",
+					"children":[
+						{
+							"id":"",
+							"name":"Vraag_9",
+							"type":"Q",
+							"text":"De text van vraag/antwoord",
+							"children":[
+								{
+									"id":"",
+									"name":"Vraag_10",
+									"type":"Q",
+									"text":"De text van vraag/antwoord"
+								}
+							]
+						}
+					]
+				},
+				{
+					"id":"5",
+					"name":"Antwoord_1.4",
+					"type":"A",
+					"text":"Dak lekt",
+					"children":[
+						{
+							"id":"",
+							"name":"Vraag_4",
+							"type":"Q",
+							"text":"De text van vraag/antwoord",
+							"children":[
+								{
+									"id":"",
+									"name":"Antwoord_4.1",
+									"type":"A",
+									"text":"De text van vraag/antwoord",
+									"children":[
+										{
+											"id":"",
+											"name":"Set_11",
+											"type":"S",
+											"text":"De text van vraag/antwoord",
+											"children":[
+												{
+													"id":"",
+													"name":"Set_13",
+													"type":"S",
+													"text":"De text van vraag/antwoord"
+												}
+											]
+										}
+									]
+								},
+								{
+									"id":"",
+									"name":"Antwoord_4.2",
+									"type":"A",
+									"text":"De text van vraag/antwoord",
+									"children":[
+										{
+											"id":"",
+											"name":"Vraag_12",
+											"type":"Q",
+											"text":"De text van vraag/antwoord"
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

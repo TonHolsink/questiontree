@@ -1,0 +1,10 @@
+Een vragenset-node bestaat uit een groep vragen
+Een vraag-node bestaat uit een enkelvoudige vraag. Oftewel een vragenset met daarin maar 1 vraag.
+Een vragenset-node kan enkel gevolgd worden door 0 - 1 vragensets-nodes of vragen-nodes
+Oftewel: Er is nooit een vertakking na een vragenset-node.
+
+Een vraag-node kan gevolgd worden door:
+	0 - n antwoord-nodes
+	0 - 1 vragensets-nodes of vraag-nodes
+Een antwoord-node moet worden gevolgd door 1 vragenset-node of vraag-node.
+Oftewel Een eind-node is altijd een vragenset-node of vraag-node.

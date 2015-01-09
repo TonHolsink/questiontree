@@ -1,0 +1,152 @@
+{
+	"id":"0",
+	"type":"S",
+	"text":"Naw gegevens",
+	"children":[
+		{
+			"id":"1",
+			"type":"Q",
+			"text":"Wat is de klacht?",
+			"children":[
+				{
+					"id":"2",
+					"type":"A",
+					"text":"Kraan lekt",
+					"children":[
+						{
+							"id":"",
+							"type":"Q",
+							"text":"Wij danken u voor het inzenden van deze melding."
+						}
+					]
+				},
+				{
+					"id":"3",
+					"type":"A",
+					"text":"Verwarming stuk",
+					"children":[
+						{
+							"id":"",
+							"type":"Q",
+							"text":"Welk onderdeel van de verwarming is stuk?",
+							"children":[
+								{
+									"id":"",
+									"type":"A",
+									"text":"De draaiknop",
+									"children":[
+										{
+											"id":"",
+											"type":"Q",
+											"text":"De monteur komt er zo snel mogelijk aan."
+										}
+									]
+								},
+								{
+									"id":"",
+									"type":"A",
+									"text":"De ketel doet het niet",
+									"children":[
+										{
+											"id":"",
+											"type":"S",
+											"text":"De text van vraag/antwoord"
+										}
+									]
+								},
+								{
+									"id":"",
+									"type":"A",
+									"text":"Ik hoor luchtbelletjes",
+									"children":[
+										{
+											"id":"",
+											"type":"Q",
+											"text":"Zijn het er veel?"
+										}
+									]
+								},
+								{
+									"id":"",
+									"type":"A",
+									"text":"Het blijft te koud",
+									"children":[
+										{
+											"id":"",
+											"type":"Q",
+											"text":"Advies: Trek iets warms aan"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"id":"4",
+					"type":"A",
+					"text":"Lamp kapot",
+					"children":[
+						{
+							"id":"",
+							"type":"Q",
+							"text":"De text van vraag/antwoord",
+							"children":[
+								{
+									"id":"",
+									"type":"Q",
+									"text":"De text van vraag/antwoord"
+								}
+							]
+						}
+					]
+				},
+				{
+					"id":"5",
+					"type":"A",
+					"text":"Dak lekt",
+					"children":[
+						{
+							"id":"",
+							"type":"Q",
+							"text":"De text van vraag/antwoord",
+							"children":[
+								{
+									"id":"",
+									"type":"A",
+									"text":"De text van vraag/antwoord",
+									"children":[
+										{
+											"id":"",
+											"type":"S",
+											"text":"De text van vraag/antwoord",
+											"children":[
+												{
+													"id":"",
+													"type":"S",
+													"text":"De text van vraag/antwoord"
+												}
+											]
+										}
+									]
+								},
+								{
+									"id":"",
+									"type":"A",
+									"text":"De text van vraag/antwoord",
+									"children":[
+										{
+											"id":"",
+											"type":"Q",
+											"text":"De text van vraag/antwoord"
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}
