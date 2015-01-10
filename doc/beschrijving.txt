@@ -8,3 +8,21 @@ Een vraag-node kan gevolgd worden door:
 	0 - 1 vragensets-nodes of vraag-nodes
 Een antwoord-node moet worden gevolgd door 1 vragenset-node of vraag-node.
 Oftewel Een eind-node is altijd een vragenset-node of vraag-node.
+
+Klikken op een node toont de details.
+De details worden met ajax opgehaald dmv een id.
+Er zijn drie soorten nodes:
+1) vragenset:
+id: --> id vragenset
+Detailscherm met deelvragen en acties
+2) vraag:
+id: --> id vragenset (met maar 1 vraag) of id vraag
+Detailscherm toont vraag. (Is dit zinvol????. Hoveren over de node toont de vraag ook al.)
+Misschien ook type vraag (open, multiple choice etc)
+3) antwoord:
+id: --> id antwoord
+Detailscherm toont antwoord en mogelijke acties.
+
+Noot:
+1) Ik ben er nog niet helemaal uit wat betreft de id's. (Overleg met Jakko)
+2) Een vraag kan ook alleen maar een tekst zijn (dus geen input-veld). Bijvoorbeeld informatie ofzo.

@@ -211,6 +211,7 @@ treeJSON = d3.json("zoompanTree.json", function(error, treeData) {
 			})
 			.on('click', click)
 			.on('mouseover', function(d) {
+				d3.select(this).classed('hover', true);
 				// Walk parent chain
 				var ancestors = [];
 				var parent = d;
@@ -227,14 +228,6 @@ treeJSON = d3.json("zoompanTree.json", function(error, treeData) {
 						return _.any(ancestors, function(p)
 						{
 							return p === d.target;
-						});
-					}).classed("hover", true);
-				svgGroup.selectAll('g.node')
-					.filter(function(d)
-					{
-						return _.any(ancestors, function(p)
-						{
-							return p.nodeId === d.nodeId;
 						});
 					}).classed("hover", true);
 			})
@@ -372,7 +365,7 @@ treeJSON = d3.json("zoompanTree.json", function(error, treeData) {
 	var details = [
 		{
 			text: "Naw gegevens",
-			action: ["Stuur een bos bloemen"]
+			action: []
 		},
 		{
 			text: "Wat is de klacht",
