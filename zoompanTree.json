@@ -49,8 +49,20 @@
 									"children":[
 										{
 											"id":"",
-											"type":"S",
-											"text":"De text van vraag/antwoord"
+											"type":"Q",
+											"text":"Welke monteur moet worden ingeschakeld?",
+											"children":[
+												{
+													"id":"6",
+													"type":"A",
+													"text":"Fa. Stoker"
+												},
+												{
+													"id":"7",
+													"type":"A",
+													"text":"Fa. Brander"
+												}
+											]
 										}
 									]
 								},
@@ -62,7 +74,19 @@
 										{
 											"id":"",
 											"type":"Q",
-											"text":"Zijn het er veel?"
+											"text":"Zijn het er veel?",
+											"children":[
+												{
+													"id":"8",
+													"type":"A",
+													"text":"Ja"
+												},
+												{
+													"id":"",
+													"type":"A",
+													"text":"Nee"
+												}
+											]
 										}
 									]
 								},

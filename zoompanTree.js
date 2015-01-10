@@ -4,7 +4,10 @@ treeJSON = d3.json("zoompanTree.json", function(error, treeData) {
 	var totalNodes = 0;
 	var maxLabelLength = 0;
 	var maxTextLength = 30;
-	var lineLength = 190;
+	var lineLength = 200;
+	//Waarschijnlijk ben ik deze factor nog vergeten op plaatsen
+	var vertspacingfactor = 1.8;
+
 	// panning variables
 	var panSpeed = 200;
 	// Misc. variables
@@ -22,7 +25,7 @@ treeJSON = d3.json("zoompanTree.json", function(error, treeData) {
 	// define a d3 diagonal projection for use by the node paths later on.
 	var diagonal = d3.svg.diagonal()
 		.projection(function(d) {
-			return [d.y, d.x];
+			return [d.y, d.x * vertspacingfactor];
 		});
 
 	// A recursive helper function for performing some setup by walking through all nodes
@@ -114,7 +117,7 @@ treeJSON = d3.json("zoompanTree.json", function(error, treeData) {
 		y = -source.x0;
 		// x = x * scale + viewerWidth / 2;
 		x = x * scale + lineLength;
-		y = y * scale + viewerHeight / 2;
+		y = y * scale * vertspacingfactor + viewerHeight / 2;
 		d3.select('g').transition()
 			.duration(duration)
 			.attr("transform", "translate(" + x + "," + y + ")scale(" + scale + ")");
@@ -142,20 +145,6 @@ treeJSON = d3.json("zoompanTree.json", function(error, treeData) {
 	function nodeText(d) {
 		return  d.text.length > maxTextLength ? d.text.slice(0,maxTextLength) + '...' : d.text;
 	}
-
-	// Toggle children function
-
-	// function toggleChildren(d) {
-	// 	if (d.children) {
-	// 		d._children = d.children;
-	// 		d.children = null;
-	// 	} else if (d._children) {
-	// 		d.children = d._children;
-	// 		d._children = null;
-	// 	}
-	// 	return d;
-	// }
-
 
 	// Toggle children on click.
 
@@ -207,7 +196,7 @@ treeJSON = d3.json("zoompanTree.json", function(error, treeData) {
 		var nodeEnter = node.enter().append("g")
 			.attr("class", "node")
 			.attr("transform", function(d) {
-				return "translate(" + source.y0 + "," + source.x0 + ")";
+				return "translate(" + source.y0 + "," + source.x0 * vertspacingfactor + ")";
 			})
 			.on('click', click)
 			.on('mouseover', function(d) {
@@ -288,7 +277,7 @@ treeJSON = d3.json("zoompanTree.json", function(error, treeData) {
 		var nodeUpdate = node.transition()
 			.duration(duration)
 			.attr("transform", function(d) {
-				return "translate(" + d.y + "," + d.x + ")";
+				return "translate(" + d.y + "," + d.x * vertspacingfactor + ")";
 			});
 
 		// Fade the text in
@@ -299,7 +288,7 @@ treeJSON = d3.json("zoompanTree.json", function(error, treeData) {
 		var nodeExit = node.exit().transition()
 			.duration(duration)
 			.attr("transform", function(d) {
-				return "translate(" + source.y + "," + source.x + ")";
+				return "translate(" + source.y + "," + source.x * vertspacingfactor + ")";
 			})
 			.remove();
 
@@ -393,6 +382,18 @@ treeJSON = d3.json("zoompanTree.json", function(error, treeData) {
 		{
 			text: "Dak lekt",
 			action: ["Bel de dakreparateur"]
+		},
+		{
+			text: "Fa. Stoker",
+			action: ["Bel de firma Stoker"]
+		},
+		{
+			text: "Fa. Brander",
+			action: ["Bel de firma Brander"]
+		},
+		{
+			text: "Ja",
+			action: ["Ontlucht de radiator"]
 		}
 	]
 });
