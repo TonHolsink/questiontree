@@ -186,7 +186,7 @@ treeJSON = d3.json("zoompanTree.json", function(error, treeData) {
 			d.y = (d.depth * lineLength);
 		});
 
-		// Update the nodes…
+		// Update the nodes...
 		node = svgGroup.selectAll("g.node")
 			.data(nodes, function(d) {
 				return d.nodeId || (d.nodeId = ++i);
@@ -298,7 +298,7 @@ treeJSON = d3.json("zoompanTree.json", function(error, treeData) {
 		nodeExit.select("text")
 			.style("fill-opacity", 0);
 
-		// Update the links…
+		// Update the links...
 		var link = svgGroup.selectAll("path.link")
 			.data(links, function(d) {
 				return d.target.nodeId;
