@@ -162,7 +162,8 @@
 										{
 											"id":"",
 											"type":"Q",
-											"text":"De text van vraag/antwoord"
+											"text":"Zo maar een vraagje",
+											"children":[]
 										}
 									]
 								}

@@ -28,6 +28,6 @@ id: --> id antwoord
 Detailscherm toont antwoord en mogelijke acties.
 
 Noot:
-1) Ik ben er nog niet helemaal uit wat betreft de id's. (Overleg met Jakko)
-2) Een vraag kan ook alleen maar een tekst zijn (dus geen input-veld). Bijvoorbeeld informatie ofzo.
-3) Waar kunnen allemaal acties aan hangen?
+Bij klikken op een node:
+Ik stuur een id en type naar achteren.
+Er wordt nog nader bepaald wat er allemaal wordt getoond. (De vraag met alle antwoorden en acties. Alleen het afonderlijke item met de acties ...)
