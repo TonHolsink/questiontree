@@ -7,6 +7,8 @@ treeJSON = d3.json("zoompanTree.json", function(error, treeData) {
 	var lineLength = 200;
 	//Waarschijnlijk ben ik deze factor nog vergeten op plaatsen
 	var vertspacingfactor = 1.8;
+	var labelOffsX = "10";
+	var labelOffsY = ".35em";
 
 	// panning variables
 	var panSpeed = 200;
@@ -239,9 +241,9 @@ treeJSON = d3.json("zoompanTree.json", function(error, treeData) {
 
 		nodeEnter.append("text")
 			.attr("x", function(d) {
-				return d.children || d._children ? -10 : 10;
+				return d.children || d._children ? -labelOffsX : labelOffsX;
 			})
-			.attr("dy", ".35em")
+			.attr("dy", labelOffsY)
 			.attr('class', 'nodeText')
 			.attr("text-anchor", function(d) {
 				return d.children || d._children ? "end" : "start";
@@ -257,7 +259,7 @@ treeJSON = d3.json("zoompanTree.json", function(error, treeData) {
 		// Update the text to reflect whether node has children or not.
 		node.select('text')
 			.attr("x", function(d) {
-				return d.children || d._children ? -10 : 10;
+				return d.children || d._children ? -labelOffsX : labelOffsX;
 			})
 			.attr("text-anchor", function(d) {
 				return d.children || d._children ? "end" : "start";
