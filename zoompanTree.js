@@ -8,7 +8,8 @@ treeJSON = d3.json("zoompanTree.json", function(error, treeData) {
 	//Waarschijnlijk ben ik deze factor nog vergeten op plaatsen
 	var vertspacingfactor = 1.8;
 	var labelOffsX = "10";
-	var labelOffsY = ".35em";
+	// var labelOffsY = ".35em";
+	var labelOffsY = "-1";
 
 	// panning variables
 	var panSpeed = 200;
