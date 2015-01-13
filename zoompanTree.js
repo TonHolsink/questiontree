@@ -371,7 +371,8 @@ treeJSON = d3.json("zoompanTree.json", function(error, treeData) {
 				my: 'bottom left',
 				target: 'mouse',
 				adjust: {
-					mouse: false
+					mouse: false,
+					y: -10
 				},
 				viewport: $(window)
 			},
