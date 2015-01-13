@@ -19,8 +19,8 @@ treeJSON = d3.json("zoompanTree.json", function(error, treeData) {
 	var root;
 
 	// size of the diagram
-	var viewerWidth = $(document).width();
-	var viewerHeight = $(document).height();
+	var viewerWidth = $(window).width() - 50;
+	var viewerHeight = $(window).height() - 50;
 
 	var tree = d3.layout.tree()
 		.size([viewerHeight, viewerWidth]);
@@ -109,6 +109,7 @@ treeJSON = d3.json("zoompanTree.json", function(error, treeData) {
 		.attr("width", viewerWidth)
 		.attr("height", viewerHeight)
 		.attr("class", "overlay")
+		.attr("id", "overlay")
 		.call(zoomListener);
 
 	// Function to center node when clicked/dropped so node doesn't get lost when collapsing/moving with large amount of children.
@@ -142,7 +143,7 @@ treeJSON = d3.json("zoompanTree.json", function(error, treeData) {
 		} else {
 			txt = d.text;
 		}
-		alert(txt);
+		// alert(txt);
 	}
 
 	function nodeText(d) {
@@ -359,6 +360,33 @@ treeJSON = d3.json("zoompanTree.json", function(error, treeData) {
 	// Layout the tree initially and center on the root node.
 	update(root);
 	centerNode(root);
+
+	$('g.node').each(function() {
+		$(this).qtip({
+			content: {
+				text: "Hallo allemaal",
+				button: true
+			},
+			position: {
+				my: 'bottom left',
+				target: 'mouse',
+				adjust: {
+					mouse: false
+				},
+				viewport: $(window)
+			},
+			show: {
+				solo: true,
+				event: click
+			},
+			hide: {
+				event: click
+			},
+			style: {
+				classes: 'qtip-bootstrap qtip-shadow'
+			}
+		});
+	});
 
 	// Mock details
 	var details = [
