@@ -135,15 +135,16 @@ treeJSON = d3.json("zoompanTree.json", function(error, treeData) {
 			var det = details[d.id];
 			txt = det.text;
 			if (det.action.length > 0) {
-				txt += "\n\nActies:\n";
+				txt += "<p>Acties:<br/>";
 				for (var i = 0; i < det.action.length; i++) {
-					txt += det.action[i] + "\n";
+					txt += det.action[i] + "</br>";
 				};
+				txt += "</p>"
 			}
 		} else {
 			txt = d.text;
 		}
-		// alert(txt);
+		return txt;
 	}
 
 	function nodeText(d) {
@@ -364,7 +365,9 @@ treeJSON = d3.json("zoompanTree.json", function(error, treeData) {
 	$('g.node').each(function() {
 		$(this).qtip({
 			content: {
-				text: "Hallo allemaal",
+				text: function(event, api) {
+					return showDetails(d3.select($(this)[0]).data()[0]);
+				},
 				button: true
 			},
 			position: {
@@ -384,7 +387,9 @@ treeJSON = d3.json("zoompanTree.json", function(error, treeData) {
 				event: click
 			},
 			style: {
-				classes: 'qtip-bootstrap qtip-shadow'
+				// classes: 'qtip-bootstrap',
+				// width: 400,
+				// height: 400
 			}
 		});
 	});
