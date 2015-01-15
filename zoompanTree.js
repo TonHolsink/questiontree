@@ -381,10 +381,11 @@ treeJSON = d3.json("zoompanTree.json", function(error, treeData) {
 			},
 			show: {
 				solo: true,
-				event: click
+				event: 'click'
 			},
 			hide: {
-				event: click
+				fixed: true,
+				// event: 'unfocus'
 			},
 			style: {
 				// classes: 'qtip-bootstrap',
